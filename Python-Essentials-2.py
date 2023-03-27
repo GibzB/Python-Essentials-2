@@ -55,7 +55,12 @@ from module import n as a, m as b, o as c
 # Note: if the module's name has been aliased, you must use the alias, not the original name.
 
 dir(module)
-  
+dir(alias)
+
+# Randomness in computers
+# Computers are deterministic machines. They always perform the same operations on the same data, and they always produce the same results.
+# The random module is used to generate random numbers.
+
 
 
 
