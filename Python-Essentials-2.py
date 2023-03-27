@@ -44,6 +44,18 @@ from module import name as alias
 
 from module import n as a, m as b, o as c
 
+# Standard Modules
+# The Python Standard Library is a set of modules that comes with Python.
+
+# dir() function
+# The dir() function returns a list of all entities defined in a module.
+# There is one condition: the module has to have been previously imported as a whole
+
+
+# Note: if the module's name has been aliased, you must use the alias, not the original name.
+
+dir(module)
+  
 
 
 
