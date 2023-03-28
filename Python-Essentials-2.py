@@ -67,6 +67,8 @@ dir(alias)
 
 # The randrange and randint functions
 # The randrange function returns a random integer from the range specified by the user.
+from random import randrange, randint
+
 randrange(end)
 randrange(beg, end)
 randrange(beg, end, step)
