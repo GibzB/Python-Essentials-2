@@ -65,4 +65,15 @@ dir(alias)
 # The seed function is used to initialize the random number generator.
 
 
+# The randrange and randint functions
+# The randrange function returns a random integer from the range specified by the user.
+randrange(end)
+randrange(beg, end)
+randrange(beg, end, step)
+
+# The randint function returns a random integer from the range specified by the user.
+randint()
+
+
+
 
