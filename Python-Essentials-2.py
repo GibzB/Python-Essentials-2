@@ -61,6 +61,8 @@ dir(alias)
 # Computers are deterministic machines. They always perform the same operations on the same data, and they always produce the same results.
 # The random module is used to generate random numbers.
 
+# The seed function
+# The seed function is used to initialize the random number generator.
 
 
 
