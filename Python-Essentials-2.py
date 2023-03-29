@@ -114,6 +114,19 @@ platform(aliased = False, terse = False)
 # terse → when set to True (or any non-zero value) it may cause the function to present the information in a terse form.
 
 
+# The MACHINE function
+# The machine function returns the machine type on which the program is running.
+# The machine function can be invoked in two ways:
+#   machine() - returns the machine type on which the program is running
+#   machine(aliased, terse) - returns a string containing the machine type on which the program is running,
+#       the version of the machine, the machine type, and the processor type.
+
+from platform import machine
+
+print(machine())
+
+
+
 
 
 
