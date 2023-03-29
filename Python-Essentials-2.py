@@ -98,5 +98,23 @@ print(sample(my_list, 5))
 print(sample(my_list, 10))
 
 
+# The Platform function
+# The platform function returns the name of the operating system on which the program is running.
+# The platform module lets you access the underlying platform's data, i.e., hardware, operating system, and interpreter version information.
+
+# The platform function returns a string containing the name of the operating system on which the program is running.
+# The platform function can be invoked in two ways:
+#   platform() - returns the name of the operating system on which the program is running
+#   platform(aliased, terse) - returns a string containing the name of the operating system on which the program is running,
+#       the version of the operating system, the machine type, and the processor type.
+
+import platform
+platform(aliased = False, terse = False)
+# aliased → when set to True (or any non-zero value) it may cause the function to present the alternative underlying layer names instead of the common ones;
+# terse → when set to True (or any non-zero value) it may cause the function to present the information in a terse form.
+
+
+
+
 
 
