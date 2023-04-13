@@ -133,6 +133,35 @@ from platform import processor
 
 print(processor())
 
+# The system function
+# A function named system() returns the generic OS name as a string.
+
+from platform import system
+
+print(system())
+
+# The version function
+# The OS version is provided as a string by the version() function.
+
+from platform import version
+
+print(version())
+
+# The python_implementation and the python_version_tuple functions
+# The python_implementation function returns the name of the Python implementation as a string.
+# The python_version_tuple function returns the Python version as a tuple of strings.
+
+from platform import python_implementation, python_version_tuple
+
+print(python_implementation())
+print(python_version_tuple())
+
+# Python Module Index
+# The Python Module Index is a searchable list of all available modules in the Python Standard Library.
+# The Python Module Index is available at https://docs.python.org/3/py-modindex.html
+
+
+
 
 
 
