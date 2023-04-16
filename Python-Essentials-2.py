@@ -161,6 +161,8 @@ print(python_version_tuple())
 # The Python Module Index is available at https://docs.python.org/3/py-modindex.html
 
 
+# PACKAGES
+# Packages are a way of structuring Python's module namespace by using "dotted module names".
 
 
 
