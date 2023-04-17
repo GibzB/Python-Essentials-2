@@ -2,7 +2,7 @@
 
 #! /usr/bin/env python3
 
-""" module: alpha """"
+# """ module: alpha """"
 
 def funA():
     return "Alpha"

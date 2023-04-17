@@ -171,9 +171,64 @@ print(python_version_tuple())
 
 # the folder in which the execution starts is listed in the first path's element.
 
+# to tell your module's user that a particular entity should be treated as private (i.e. not to be explicitly used outside the module) 
+# you can mark its name with either the _ or __ prefix
+#   (the latter is called a double underscore). This is called name mangling.
+
+# If you want convince Python that it should take into account a non-standard package's directory, 
+# its name needs to be inserted/appended into/to the import directory list stored in the path variable contained in the sys module.
+
+# A Python file named __init__.py is implicitly run when a package containing it is subject to import, and is used to initialize a package and/or its sub-packages (if any). 
+# The file may be empty, but must not be absent.
+
+
+# Question 1: 
+# You want to prevent your module's user from running your code as an ordinary script. How will you achieve such an effect?
+import sys
+
+if __name__ == "__main__":
+    print ("Don't do that!")
+    sys.exit()
+    
+# Question 2:
+# Some additional and necessary packages are stored inside the D:\Python\Project\Modules directory. 
+# Write a code ensuring that the directory is traversed by Python in order to find all requested modules.
+import sys
+
+# note the double backslashes!
+sys.path.append("D:\\Python\\Project\\Modules")
+
+# Question 3:
+# The directory mentioned in the previous exercise contains a sub-tree of the following structure:
+
+# abc
+# |__ def
+#     |__ mymodule.py
+# Assuming that D:\Python\Project\Modules has been successfully appended to the sys.path list, 
+# write an import directive letting you use all the mymodule entities.
+
+import abc.def.mymodule
+
+# Python Package Installer (PIP)
+# The Python Package Installer (PIP) is a tool for installing and managing Python packages.
+
+# The pip command
+# The pip command is used to install and manage Python packages.
+# The pip command is available in the command prompt.
+
+#PyPI
+# PyPI is the Python Package Index, a repository of software for the Python programming language.
+# and it's maintained by a workgroup named the Packaging Working Group, a part of the Python Software Foundation, 
+#  whose main task is to support Python developers in efficient code dissemination.
+
+# PyPI is available at https://pypi.org/
+
+
+# DEPENDANCIES
+# A dependency is a package that is required by another package to work properly.
 
 
 
 
 
-
+# 
