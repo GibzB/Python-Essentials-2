@@ -18,3 +18,17 @@ print(prodl(ones))
 
 # when you run a file directly, its __name__ variable is set to __main__;
 # when a file is imported as a module, its __name__ variable is set to the file's name (excluding .py)
+
+from sys import path
+
+# backslash is used to escape other characters - if you want to get just a backslash, you have to escape it
+# path.append('..∖∖modules')
+
+
+import module
+
+zeroes = [0 for i in range(5)]
+ones = [1 for i in range(5)]
+print(module.suml(zeroes))
+print(module.prodl(ones))
+
