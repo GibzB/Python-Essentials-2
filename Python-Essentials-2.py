@@ -207,7 +207,7 @@ sys.path.append("D:\\Python\\Project\\Modules")
 # Assuming that D:\Python\Project\Modules has been successfully appended to the sys.path list, 
 # write an import directive letting you use all the mymodule entities.
 
-import abc.def.mymodule
+# >> import abc.def.mymodule
 
 # Python Package Installer (PIP)
 # The Python Package Installer (PIP) is a tool for installing and managing Python packages.
@@ -227,8 +227,15 @@ import abc.def.mymodule
 # DEPENDANCIES
 # A dependency is a package that is required by another package to work properly.
 
+# you want to know what Python packages have been installed so far, you can use the list operation
+# >> pip3 list
 
+# to tell you more about any of the installed packages
+# >> pip show package_name
 
+# to convince pip to confess something about itself.
+# >> pip show pip
 
+# To distinguish between these two actions, pip uses a dedicated option named --user
+# If you don’t add this, pip assumes that you’re a system administrator and it’ll do nothing to correct you if you’re not.
 
-# 
