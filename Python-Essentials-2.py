@@ -239,3 +239,46 @@ sys.path.append("D:\\Python\\Project\\Modules")
 # To distinguish between these two actions, pip uses a dedicated option named --user
 # If you don’t add this, pip assumes that you’re a system administrator and it’ll do nothing to correct you if you’re not.
 
+# CHARACTERS & STRINGS
+# A string is a sequence of characters.
+# A character is a symbol that represents a letter, a number, or a punctuation mark.
+
+# I18N (internationalization)
+# I18N is the process of designing a software application so that it can potentially be adapted to various languages and regions without engineering changes.
+
+# L10N (localization)
+# L10N is the process of adapting a software application to a specific region or language.
+
+# Code Point
+# A code point is a number that represents a character.
+#   e.g, 32 is a code point which makes a space in ASCII encoding.
+
+# Unicode
+# Unicode is a computing industry standard for the consistent encoding, representation, and handling of text expressed in most of the world's writing systems.
+#   Unicode assigns unique (unambiguous) characters (letters, hyphens, ideograms, etc.) to more than a million code points
+#   Unicode is a superset of ASCII, which is a subset of Unicode.
+
+# UCS-4 (Universal Character Set)
+# UCS-4 is a character encoding standard that uses 32 bits (4 bytes) to represent each character.
+
+# UTF-8 (Unicode Transformation Format)
+# UTF-8 is a variable-width character encoding capable of encoding all 1,112,064 valid code points in Unicode using one to four 8-bit bytes.
+# UTF-8 is the most widely used Unicode encoding.
+# UTF-8 uses as many bits for each of the code points as it really needs to represent them.
+
+# UTF-16 (Unicode Transformation Format)
+# UTF-16 is a variable-width character encoding capable of encoding all 1,112,064 valid code points in Unicode using one to four 16-bit words.
+# UTF-16 uses as many bits for each of the code points as it really needs to represent them.
+
+# BOM 
+# BOM (Byte Order Mark) is a special combination of bits announcing encoding used by a file's content (eg. UCS-4 or UTF-B).
+# BOM is a Unicode character (U+FEFF) that is used to mark the beginning of a text stream,
+#   and to indicate that the text stream is encoded in Unicode.
+
+
+
+
+
+
+
+
