@@ -276,6 +276,16 @@ sys.path.append("D:\\Python\\Project\\Modules")
 #   and to indicate that the text stream is encoded in Unicode.
 
 
+# STRINGS AS SEQUENCE
+# Indexing
+
+# Python strings are sequences.
+# A sequence is a collection of objects that are stored in a particular order and can be accessed through an index.
+
+# Iterating
+#  
+
+
 
 
 
