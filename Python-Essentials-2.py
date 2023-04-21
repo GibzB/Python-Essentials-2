@@ -283,7 +283,31 @@ sys.path.append("D:\\Python\\Project\\Modules")
 # A sequence is a collection of objects that are stored in a particular order and can be accessed through an index.
 
 # Iterating
-#  
+
+
+#  NOTE
+# Python strings are immutable,
+#   which means that you cannot change the content of a string once it has been created.
+#   the similarity of strings and lists is limited.
+#       doesn't allow you to use the 'del' instruction to remove anything from a string
+#       doesn't allow you to use the 'append' or 'extend' methods to add anything to a string, 
+#           Python strings don't have the append() method – you cannot expand them in any way.
+#       doesn't allow you to use the 'insert' method to insert anything into a string
+#   You can only use the 'del' to remove the whole string
+
+
+# STRING OPERATIONS
+
+# min()
+# The function finds the minimum element of the sequence passed as an argument.
+#   The sequence can be a string, a list, or a tuple.
+#   The sequence CANNOT be empty.
+
+# max()
+# The function finds the maximum element of the sequence passed as an argument.
+
+
+
 
 
 
