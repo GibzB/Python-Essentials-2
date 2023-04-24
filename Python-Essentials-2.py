@@ -307,6 +307,31 @@ sys.path.append("D:\\Python\\Project\\Modules")
 # The function finds the maximum element of the sequence passed as an argument.
 
 
+# STRING METHODS
+
+# capitalize()
+# The method returns a copy of the string with its first character capitalized and the rest lowercased.
+
+# casefold()
+# The method returns a copy of the string with all the case-based characters (letters) lowercased.
+
+# center()
+# The method returns a copy of the string with the specified number of characters centered in it.
+#   If the number of characters is less than the length of the string, the original string is returned.
+
+# count()
+# The method returns the number of occurrences of a substring in the string.
+
+# endswith()
+# The method returns True if the string ends with the specified suffix, False otherwise.
+
+# find()
+# The method returns the index of the first occurrence of the specified substring in the string.
+#   If the substring is not found, the method returns -1.
+
+
+
+
 
 
 
