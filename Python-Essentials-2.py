@@ -329,6 +329,36 @@ sys.path.append("D:\\Python\\Project\\Modules")
 # The method returns the index of the first occurrence of the specified substring in the string.
 #   If the substring is not found, the method returns -1.
 
+#  LAB   
+# Your own split
+
+# Your task is to write your own function, which behaves almost exactly like the original split() method, i.e.:
+
+#   it should accept exactly one argument – a string;
+#   it should return a list of words created from the string, divided in the places where the string contains whitespaces;
+#   if the string is empty, the function should return an empty list;
+#   its name should be mysplit()
+
+def mysplit(strng):
+
+    list_of_words = []
+    word = ""
+    for i in range(len(strng)):
+        if strng[i] != " ":
+            word += strng[i]
+        else:
+            list_of_words.append(word)
+            word = ""
+    list_of_words.append(word)
+    return list_of_words
+
+print(mysplit("To be or not to be, that is the question"))
+print(mysplit("To be or not to be,that is the question"))
+print(mysplit("   "))
+print(mysplit(" abc "))
+print(mysplit(""))
+
+
 
 
 
