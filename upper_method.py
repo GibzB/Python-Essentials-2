@@ -4,7 +4,7 @@
 #   and returns the string as the result
 
 # Demonstrating the upper() method:
-print("I know that I know nothing. Part 11.".upper())
+print("I know that I know nothing. Part 1.".upper())
 
 # The upper() method has one more interesting feature:
 # it can capitalize the letter preceding every single quote mark (') and double quote mark (").
