@@ -438,12 +438,51 @@ print_number(int(input("Enter the number you wish to display: ")))
 # An algorithm used to perform such a comparison for the English language is called Soundex and was invented – you won't believe – in 1918. 
 # You can find out more about it here: https://en.wikipedia.org/wiki/Soundex.
 
-
 # 4. Due to limited native float and integer data precision, 
 # it's sometimes reasonable to store and process huge numeric values as strings. 
 # This is the technique Python uses when you force it to operate on an integer number consisting of a very large number of digits.
 
 
+
+# ERRORS
+# Murphy's law: Anything that can go wrong, will go wrong.
+# 
+import math
+
+x = float(input("Enter x: "))
+y = math.sqrt(x) # that the sqrt() function fails if it gets a negative argument. 
+
+print("The square root of", x, "equals to", y)
+# there is no guarantee that the string can be converted into a float value 
+# (the user may enter a string which cannot be interpreted as a number, e.g., "abc")
+
+
+# EXCEPTIONS
+# An exception is an event which occurs during the execution of a program that disrupts the normal flow of the program's instructions.
+
+# Python always raises an exception (or that an exception has been raised) when it has no idea what to do with your code.
+
+# Handling an Exception
+# Python implements a try keyword
+
+
+first_number = int(input("Enter the first number: "))
+second_number = int(input("Enter the second number: "))
+
+try:
+    print(first_number / second_number)
+except:
+    print("This operation cannot be done.")
+
+print("THE END.")
+    
+# Note:
+
+# the try keyword begins a block of the code which may or may not be performing correctly;
+# next, Python tries to perform the risky action; if it fails, an exception is raised and Python starts to look for a solution;
+# the except keyword starts a piece of code which will be executed if anything inside the try block goes wrong – if an exception is raised inside a previous try block, it will fail here, so the code located after the except keyword should provide an adequate reaction to the raised exception;
+# returning to the previous nesting level ends the try-except section.
+    
 
 
 
