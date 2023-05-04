@@ -69,7 +69,7 @@ dir(alias)
 # The randrange function returns a random integer from the range specified by the user.
 from random import randrange, randint
 
-randrange(end)
+randrange(end) 
 randrange(beg, end)
 randrange(beg, end, step)
 
@@ -483,6 +483,163 @@ print("THE END.")
 # the except keyword starts a piece of code which will be executed if anything inside the try block goes wrong – if an exception is raised inside a previous try block, it will fail here, so the code located after the except keyword should provide an adequate reaction to the raised exception;
 # returning to the previous nesting level ends the try-except section.
     
+try:
+    print("1")
+    x = 1 / 0
+    print("2") # the print("2") instruction was lost in the process.
+except:
+    print("Oh dear, something went wrong...")
+
+print("3")
+
+try:
+    x = int(input("Enter a number: "))
+    y = 1 / x
+except:
+    print("Oh dear, something went wrong...")
+
+print("THE END.")
+
+# Note:
+
+# the try-except block is able to catch all exceptions, but it's not a good idea to use it blindly 
+# 	– it may hide some bugs in your code;
+
+# If a number is not entered, 
+# The message: Oh dear, something went wrong... appearing in the console says nothing about the reason
+# there are two possible causes of the exception:
+#	non-integer data entered by the user;
+#	 an integer value equal to 0 assigned to the x variable.
+
+# SOLUTION
+# build two consecutive try-except blocks, 
+# 	one for each possible exception reason (easy, but will cause unfavorable code growth)
+# use a more advanced variant of the instruction.
 
 
+try:
+	x = int(input("Enter a number: "))
+	y = 1 / x
+	print(y)
+except ZeroDivisionError:
+	print("You cannot divide by zero, sorry.")
+except ValueError:
+	print("You must enter an integer value.")
+except:
+	print("Oh dear, something went wrong...")
+print("THE END.")
+
+# NOTE:
+
+# the except branches are searched in the same order in which they appear in the code;
+
+# you must not use more than one except branch with a certain exception name;
+
+# the number of different except branches is arbitrary 
+# 	– the only condition is that if you use try, you must put at least one except (named or not) after it;
+
+# the except keyword must not be used without a preceding try;
+
+# if any of the except branches is executed, no other branches will be visited;
+
+# if none of the specified except branches matches the raised exception, the exception remains unhandled
+
+# if an unnamed except branch exists (one without an exception name), it has to be specified as the last.
+
+
+try:
+    # except ZeroDivisionError has been removed
+    x = int(input("Enter a number: ")) # What happens now if the user enters 0 as an input?
+    y = 1 / x 
+    print(y)
+
+except ValueError:
+    print("You must enter an integer value.")
+except:
+    print("Oh dear, something went wrong...")
+
+print("THE END.")
+    
+
+# What happens now if the user enters 0 as an input?
+
+# As there are no dedicated branches for division by zero, 
+# the raised exception falls into the general (unnamed) branch
+
+
+# SECTION SUMMARY
+# 1. An exception is an event during program execution caused by an abnormal situation. 
+# The exception should he handled to avoid the termination of the program. 
+# The part of your code that is suspected of being the source of the exception should be put inside the try branch.
+
+# When the exception happens, the execution of the code is not terminated, 
+# but instead jumps into the except branch. 
+# This is the place where the handling of the exception should take place. 
+# The general scheme for such a construction looks as follows:
+
+
+try:
+    # :
+    # Risky code.
+    # :
+except:
+    # :
+    # Crisis management takes place here.
+    # :
+# :
+# Back to normal.
+# :
+ 
+# 2. If you need to handle more than one exception coming from the same try branch, 
+# you can add more than one except branch, but you have to label them with different exception names, like this:
+
+# :
+try:
+    # :
+    # Risky code.
+    :
+except Except_1:
+    # Crisis management takes place here.
+except Except_2:
+    # We save the world here.
+# :
+# Back to normal.
+# :
+ 
+# At most, one of the except branches is executed 
+# 	– none of the branches is performed when the raised exception doesn't match any of the specified exceptions.
+
+
+# 3. You cannot add more than one anonymous (unnamed) except branch after the named ones.
+
+# The code that always runs smoothly.
+# :
+	try:
+    # :
+    # Risky code.
+    # :
+except Except_1:
+    # Crisis management takes place here.
+except Except_2:
+    # We save the world here.
+	except:
+    # All other issues fall here.
+# :
+# Back to normal.
+# :
+
+
+# 4. You can use the else keyword to mark a block of code to be executed if no exceptions were raised in the try block.
+# :
+	try:
+	# :
+	# Risky code.
+	# :
+	except Except_1:
+	# Crisis management takes place here.	
+	
+
+# EXCEPTIONS
+# Is an event which occurs during the execution of a program that disrupts the normal flow of the program's instructions.
+# The program can be interrupted by an exception, and the program can be interrupted by a keyboard interrupt.
 
