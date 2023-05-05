@@ -580,7 +580,8 @@ print("THE END.")
 
 try:
     # :
-    # Risky code.
+    print() # Risky code.
+    
     # :
 except:
     # :
@@ -594,14 +595,14 @@ except:
 # you can add more than one except branch, but you have to label them with different exception names, like this:
 
 # :
-try:
+    try:
     # :
-    # Risky code.
-    :
-except Except_1:
-    # Crisis management takes place here.
-except Except_2:
-    # We save the world here.
+        print(): # Risky code   
+    # :
+    except Except_1:
+        print() # Crisis management takes place here.
+    except Except_2:
+            print() # We save the world here.
 # :
 # Back to normal.
 # :
@@ -614,15 +615,16 @@ except Except_2:
 
 # The code that always runs smoothly.
 # :
-	try:
+    try:
     # :
-    # Risky code.
+     print() # Risky code.
     # :
-except Except_1:
-    # Crisis management takes place here.
-except Except_2:
-    # We save the world here.
-	except:
+    except Except_1:
+      print() # Risky code.# Crisis management takes place here.
+    except Except_2:
+      print() # Risky code.# We save the world here.
+    except:
+        print() # Risky code.
     # All other issues fall here.
 # :
 # Back to normal.
@@ -631,11 +633,11 @@ except Except_2:
 
 # 4. You can use the else keyword to mark a block of code to be executed if no exceptions were raised in the try block.
 # :
-	try:
+try:
 	# :
-	# Risky code.
+	print() # Risky code.# Risky code.
 	# :
-	except Except_1:
+except Except_1:
 	# Crisis management takes place here.	
 	
 
@@ -643,3 +645,110 @@ except Except_2:
 # Is an event which occurs during the execution of a program that disrupts the normal flow of the program's instructions.
 # The program can be interrupted by an exception, and the program can be interrupted by a keyboard interrupt.
 
+# the closer to the root an exception is located, the more general (abstract) it is. 
+# In turn, the exceptions located at the branches' ends (we can call them leaves) are CONCRETE
+
+# Note:
+
+# ZeroDivisionError is a special case of a more general exception class named ArithmeticError;
+# ArithmeticError is a special case of a more general exception class named just Exception;
+# Exception is a special case of a more general class named BaseException;
+
+# LAYOUT
+
+#        BaseException
+#           ↑
+#         Exception
+#           ↑
+#       ArithmeticError
+#           ↑
+#       ZeroDivisionError
+
+    try:
+        y = 1 / 0
+    except ZeroDivisionError:
+        print("Ooopsss...")
+
+        print("THE END.")
+
+# Replace zeroDivision error with ArithmeticError;
+# The code's output remains unchanged.
+# This is because the ArithmeticError is a general class including (among others) the ZeroDivisionError exception.
+# replacing the exception's name with either Exception or BaseException won't change the program's behavior
+
+try:
+    y = 1 / 0
+except ArithmeticError:
+    print("Oooppsss...")
+
+print("THE END.")
+
+# each exception raised falls into the first matching branch;
+# the matching branch doesn't have to specify the same exception exactly 
+#   – it's enough that the exception is more general (more abstract) than the raised one.
+
+
+
+
+try:
+    y = 1 / 0
+except ZeroDivisionError:
+    print("Zero Division!")
+except ArithmeticError:
+    print("Arithmetic problem!")
+
+print("THE END.")
+    
+# The first matching branch is the one containing ZeroDivisionError. It means that the console will output: "Zero division! THE END."
+
+
+# Swapping the exception
+try: y = 1 / 0 
+except ArithmeticError: 
+     print("Arithmetic problem!") 
+except ZeroDivisionError: 
+     print("Zero Division!") 
+print("THE END.")
+
+# The first matching branch is the one containing ArithmeticError. It means that the console will output: "Arithmetic problem! THE END."
+
+# The exception is the same, but the more general exception is now listed first – it will catch all zero divisions too. 
+# It also means that there's no chance that any exception hits the ZeroDivisionError branch. 
+# This branch is now completely unreachable.
+
+# REMEMBER!
+
+# 1. the order of the branches matters!
+# 2. don't put more general exceptions before more concrete ones;
+# 3. this will make the latter one unreachable and useless;
+# 4. moreover, it will make your code messy and inconsistent;
+# 5. Python won't generate any error messages regarding this issue.
+
+
+# HANDLING 2 or MORE EXCEPTIONS
+
+# You can use more than one except branch to handle different exceptions.
+# The general scheme for such a construction looks as follows:
+
+try: 
+    print()# : Code value here 
+except (exc1, exc2): 
+    print()# : Code value here 
+except (exc3, exc4): 
+    print()# : Code value here
+except:
+    print() # : Code value here
+
+
+# RAISE instruction
+
+# raises the specified exception named exc as if it was raised in a normal (natural) way
+raise exc
+
+# Note: 
+# RAISE (small letters for syntax) is a keyword.
+
+# The instruction enables you to:
+
+# simulate raising actual exceptions (e.g., to test your handling strategy)
+# partially handle an exception and make another part of the code responsible for completing the handling (separation of concerns).
