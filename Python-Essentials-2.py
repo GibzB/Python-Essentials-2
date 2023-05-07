@@ -595,14 +595,19 @@ except:
 # you can add more than one except branch, but you have to label them with different exception names, like this:
 
 # :
+    def Except_1(here):
+        pass
+    def Except_2():
+        pass
     try:
     # :
-        print(): # Risky code   
+        print() # # Risky code.
+      # Crisis management takes place here.
     # :
     except Except_1:
         print() # Crisis management takes place here.
     except Except_2:
-            print() # We save the world here.
+        print() # We save the world here.
 # :
 # Back to normal.
 # :
@@ -620,7 +625,8 @@ except:
      print() # Risky code.
     # :
     except Except_1:
-      print() # Risky code.# Crisis management takes place here.
+      print() # Risky code.
+      # Crisis management takes place here.
     except Except_2:
       print() # Risky code.# We save the world here.
     except:
