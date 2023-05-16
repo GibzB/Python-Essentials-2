@@ -758,3 +758,18 @@ raise exc
 
 # simulate raising actual exceptions (e.g., to test your handling strategy)
 # partially handle an exception and make another part of the code responsible for completing the handling (separation of concerns).
+
+
+# True or False conditions!
+print(
+    'smith' > 'Smith',
+    'Smiths' < 'Smith',
+    'Smith' > '1000',
+    '11' < '8'
+)
+
+
+s1 = 'Where are the snows of yesteryear?'
+s2 = s1.split() # splits the sentence per word
+s3 = sorted(s2)
+print(s3)
