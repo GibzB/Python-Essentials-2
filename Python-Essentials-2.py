@@ -329,6 +329,24 @@ sys.path.append("D:\\Python\\Project\\Modules")
 # The method returns the index of the first occurrence of the specified substring in the string.
 #   If the substring is not found, the method returns -1.
 
+# chr()
+# The function returns a one-character string based on the argument's (an integer between 0 and 1,114,111) Unicode code point.
+#   This is equivalent to the chr() function in C.
+
+print(chr(97))
+print(chr(945))
+
+# ord()
+# The function returns an integer representing the Unicode code point of the character when the argument is a Unicode object, or the value of the byte when the argument is an 8-bit string.
+#   This is equivalent to the ord() function in C.
+
+char_1 = 'a'
+char_2 = ' '  # space
+
+print(ord(char_1))
+print(ord(char_2))
+
+
 #  LAB   
 # Your own split
 
@@ -850,14 +868,14 @@ while True:
         print("Don't do that!")
 
 # LookupError
-Location: BaseException ← Exception ← LookupError
+# Location: BaseException ← Exception ← LookupError
 
-Description: an abstract exception including all exceptions caused by errors resulting from invalid references to different collections (lists, dictionaries, tuples, etc.)
+# Description: an abstract exception including all exceptions caused by errors resulting from invalid references to different collections (lists, dictionaries, tuples, etc.)
 
 MemoryError
-Location: BaseException ← Exception ← MemoryError
+# Location: BaseException ← Exception ← MemoryError
 
-Description: a concrete exception raised when an operation cannot be completed due to a lack of free memory.
+# Description: a concrete exception raised when an operation cannot be completed due to a lack of free memory.
 
 # This code causes the MemoryError exception.
 # Warning: executing this code may affect your OS.
@@ -873,9 +891,9 @@ except MemoryError:
 
 
 # OverflowError
-Location: BaseException ← Exception ← ArithmeticError ← OverflowError
+# Location: BaseException ← Exception ← ArithmeticError ← OverflowError
 
-Description: a concrete exception raised when an operation produces a number too big to be successfully stored
+# Description: a concrete exception raised when an operation produces a number too big to be successfully stored
 
 # The code prints subsequent
 # values of exp(k), k = 1, 2, 4, 8, 16, ...
@@ -892,25 +910,25 @@ except OverflowError:
     print('The number is too big.')
  
 
- ImportError
-Location: BaseException ← Exception ← StandardError ← ImportError
+#  ImportError
+# Location: BaseException ← Exception ← StandardError ← ImportError
 
-Description: a concrete exception raised when an import operation fails
+# Description: a concrete exception raised when an import operation fails
 
 # One of these imports will fail – which one?
  
 try:
     import math
     import time
-    import abracadabra:
+    import abracadabra
  
 except:
     print('One of your imports has failed.')
  
-KeyError
-Location: BaseException ← Exception ← LookupError ← KeyError
+# KeyError
+# Location: BaseException ← Exception ← LookupError ← KeyError
 
-Description: a concrete exception raised when you try to access a non-existent element in a collection (e.g., a dictionary's element)
+# Description: a concrete exception raised when you try to access a non-existent element in a collection (e.g., a dictionary's element)
 
 # How to abuse the dictionary
 # and how to deal with it?
@@ -925,3 +943,65 @@ try:
 except KeyError:
     print('No such key:', ch)
 
+# Strings are IMMUTABLE sequences.
+word = 'by'
+print(len(word))
+
+empty = ''
+print(len(empty))
+
+multiline = '''Line #1
+Line #2'''
+# Counting the characters produces 15, The missing character is simply invisible – it's a whitespace. 
+# It's located between the two text lines.
+
+print(len(multiline))
+
+# STACK
+
+# A stack is a structure developed to store data in a very specific way.
+# A stack is a collection of elements,
+#   but it differs from an ordinary collection in two ways:
+#   First, the order of insertion and deletion is LIFO (Last In First Out).
+#   Second, there's only one way to add elements to a stack or remove them from it.
+
+# The alternative name for a stack (but only in IT terminology) is LIFO(Last in - First Out)
+#   (or LIFO (Last In - First Out) in English).
+
+# stack - the procedural approach
+# LIFO (Last in - First Out)
+
+stack = []
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+def push(val):
+    stack.append(val)
+
+def pop():
+    val = stack[-1]
+    del stack[-1]
+    return val
+
+def pop():
+    val = stack[-1]
+    del stack[-1]
+    return val
+
+
+
+# the object-oriented approach
+
+class Stack:
+    def __init__(self):
+        self.__stk = []
+
+    def push(self, val):
+        self.__stk.append(val)
+
+    def pop(self):
+        val = self.__stk[-1]
+        del self.__stk[-1]
+        return val
+    
