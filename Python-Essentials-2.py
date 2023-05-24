@@ -992,16 +992,112 @@ def pop():
 
 
 # the object-oriented approach
+# Objects are incarnations of ideas expressed in classes, like a cheesecake on your plate is an incarnation of the idea expressed in a recipe printed in an old cookbook.
+#   In this case, the recipe is an object.
+# The class is a kind of a template, a recipe for creating objects.
+
+# The object approach suggests a completely different way of thinking. The data and the code are enclosed together in the same world, divided into classes.
+#   The data is hidden from the outside world, and the code is the only way to access it.
+#   This approach suggests that the data and the code are enclosed together in the same world.
+
+# every existing object may be equipped with three groups of attributes:
+#  1. an object has a name that uniquely identifies it within its home namespace 
+#       (the namespace is a kind of a container for all the names used in the program;
+#  2. an object has a set of individual properties which make it original, unique, or outstanding
+#  3. an object has a set of abilities to perform specific activities, able to change the object itself, or some of the other objects.
+
+#   In programming, the ability to change the object itself is called encapsulation.
+
+class Stack:  # Defining the Stack class.
+    def __init__(self):  # Defining the constructor function.
+        print("Hi!")
+
+
+stack_object = Stack()  # Instantiating the object.
+    
+# When any class component has a name starting with two underscores (__), it becomes PRIVATE    
+# This is how Python implements the encapsulation concept.
+
+# INHERITANCE
+# Inheritance is a mechanism that allows you to base a new class upon the definition of a pre-existing one.
+# Any object bound to a specific level of a class hierarchy inherits all the traits (as well as the requirements and qualities) defined inside any of the superclasses.
 
 class Stack:
     def __init__(self):
-        self.__stk = []
+        self.__stack_list = []
+
 
     def push(self, val):
-        self.__stk.append(val)
+        self.__stack_list.append(val)
+
 
     def pop(self):
-        val = self.__stk[-1]
-        del self.__stk[-1]
+        val = self.__stack_list[-1]
+        del self.__stack_list[-1]
         return val
-    
+
+# The functions have more parameters than their procedural counterparts.
+#   both functions have a parameter named self at the first position of the parameters list.
+#   It plays the same role as the first constructor parameter.
+
+stack_object = Stack()
+
+stack_object.push(3)
+stack_object.push(2)
+stack_object.push(1)
+
+print(stack_object.pop())
+print(stack_object.pop())
+print(stack_object.pop())
+
+# you can now have more than one stack behaving in the same way.
+
+class Stack:
+    def __init__(self):
+        self.__stack_list = []
+
+    def push(self, val):
+        self.__stack_list.append(val)
+
+    def pop(self):
+        val = self.__stack_list[-1]
+        del self.__stack_list[-1]
+        return val
+
+
+stack_object_1 = Stack()
+stack_object_2 = Stack()
+
+stack_object_1.push(3)
+stack_object_2.push(stack_object_1.pop())
+
+print(stack_object_2.pop())
+
+# There are two stacks created from the same base class. 
+# They work independently.
+
+
+
+# 3 Objects of the class Stack
+class Stack:
+    def __init__(self):
+        self.__stack_list = []
+
+    def push(self, val):
+        self.__stack_list.append(val)
+
+    def pop(self):
+        val = self.__stack_list[-1]
+        del self.__stack_list[-1]
+        return val
+
+
+little_stack = Stack()
+another_stack = Stack()
+funny_stack = Stack()
+
+little_stack.push(1)
+another_stack.push(little_stack.pop() + 1)
+funny_stack.push(another_stack.pop() - 2)
+
+print(funny_stack.pop())
