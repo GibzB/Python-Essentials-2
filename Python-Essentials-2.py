@@ -1101,3 +1101,30 @@ another_stack.push(little_stack.pop() + 1)
 funny_stack.push(another_stack.pop() - 2)
 
 print(funny_stack.pop())
+
+# Question 1: Assuming that there is a class named Snakes, write the very first line of the Python class declaration, expressing the fact that the new class is actually a subclass of Snake.
+class Python(Snakes):
+
+# Question 2: Something is missing from the following declaration – what?
+
+    class Snakes:
+        def __init__():
+            self.sound = 'Sssssss'
+#SOLUTION
+# The __init__() constructor lacks the obligatory parameter: 
+#   should include self to stay compliant
+class Snakes:
+    def __init__(self):
+        self.sound = 'Sssssss'
+
+# Question 3: Modify the code to guarantee that the venomous property is private.
+
+class Snakes:
+    def __init__(self):
+        self.venomous = True
+
+# SOLUTION:
+class Snakes:
+    def __init__(self):
+        self.__venomous = True
+
