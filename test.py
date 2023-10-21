@@ -1,5 +1,3 @@
-from random import randint
-
-for i in range(2):
-    print(randint(1, 2), end='')
-    
+for x in range(10):
+    for y in range(x):
+        print(y)
